@@ -13,19 +13,16 @@ import java.io.Serializable;
 @Getter
 @Setter
 @Entity
-@Table(name = "UTILISATEUR")
-public class Utilisateur implements Serializable {
+@Table(name = "ROLE")
+public class Role implements Serializable {
     /**
      * Identifiant de serialisation
      */
     private static final long serialVersionUID = 181450486423721993L;
 
     @Id
-    @GeneratedValue(generator = "SEQ_UTILISATEUR_ID", strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(generator = "SEQ_ROLE_ID", strategy = GenerationType.SEQUENCE)
 
     private Long id;
-    private String firstName;
-    private String lastName;
-    private String email;
-
+    private String name;
 }

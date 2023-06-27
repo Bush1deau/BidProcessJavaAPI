@@ -21,7 +21,7 @@ public class UtilisateurRestController {
     }
 
     @GetMapping( "utilisateur/{id}" )
-    public Optional<Utilisateur> findCustomerById(@PathVariable("id") Long id
+    public Optional<Utilisateur> findUtilisateurById(@PathVariable("id") Long id
     ){
         return utilisateurService.findUtilisateurById(id);
     }

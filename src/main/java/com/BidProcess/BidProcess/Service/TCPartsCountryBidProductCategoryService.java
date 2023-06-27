@@ -1,0 +1,21 @@
+package com.BidProcess.BidProcess.Service;
+
+import com.BidProcess.BidProcess.Model.PK.TCPartsCountryBidProductCategoryPK;
+import com.BidProcess.BidProcess.Model.TCPartsCountryBidProductCategory;
+
+import java.util.List;
+import java.util.Optional;
+
+public interface TCPartsCountryBidProductCategoryService {
+
+    Optional<TCPartsCountryBidProductCategory> findTCPartsCountryBidProductCategoryById(TCPartsCountryBidProductCategoryPK id);
+
+    List<TCPartsCountryBidProductCategory> listTCPartsCountryBidProductCategories();
+
+    TCPartsCountryBidProductCategory createTCPartsCountryBidProductCategory(TCPartsCountryBidProductCategory tCPartsCountryBidProductCategory);
+
+    TCPartsCountryBidProductCategory updateTCPartsCountryBidProductCategory(TCPartsCountryBidProductCategory tCPartsCountryBidProductCategory, TCPartsCountryBidProductCategoryPK tcPartsCountryBidProductCategoryPK);
+
+    TCPartsCountryBidProductCategory deleteTCPartsCountryBidProductCategory(TCPartsCountryBidProductCategory tCPartsCountryBidProductCategory);
+
+}
