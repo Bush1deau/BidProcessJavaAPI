@@ -3,10 +3,7 @@ package com.BidProcess.BidProcess.Controller;
 
 import com.BidProcess.BidProcess.Model.PK.TCPartsCountryBidProductCategoryPK;
 import com.BidProcess.BidProcess.Model.TCPartsCountryBidProductCategory;
-import com.BidProcess.BidProcess.Service.CountryService;
-import com.BidProcess.BidProcess.Service.RequeteService;
-import com.BidProcess.BidProcess.Service.TCPartsCountryBidProductCategoryService;
-import com.BidProcess.BidProcess.Service.TCPartsService;
+import com.BidProcess.BidProcess.Service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

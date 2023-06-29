@@ -28,7 +28,7 @@ public class TCPartsCountryBidProductCategoryServiceImpl implements TCPartsCount
 
         if (optionalTCPartsCountryBidProductCategory.isPresent()) {
             final TCPartsCountryBidProductCategory tCPartsCountryBidProductCategory = optionalTCPartsCountryBidProductCategory.get();
-            return TCPartsCountryBidProductCategoryRepository.findById(id);
+            return tCPartsCountryBidProductCategoryRepository.findById(id);
         } else {
             throw  TCPartsCountryBidProductCategoryNotFoundException.tCPartsCountryBidProductCategoryNotFound();
         }
