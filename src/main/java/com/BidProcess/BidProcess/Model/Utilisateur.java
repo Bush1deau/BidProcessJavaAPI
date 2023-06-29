@@ -28,4 +28,8 @@ public class Utilisateur implements Serializable {
     private String lastName;
     private String email;
 
+
+
+    @ManyToOne
+    private Role role;
 }
