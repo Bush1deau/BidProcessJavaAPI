@@ -19,7 +19,7 @@ public class TCPartsCountryBidProductCategoryRestController {
     private TCPartsCountryBidProductCategoryService tCPartsCountryBidProductCategoryService;
 
 
-    public TCPartsCountryBidProductCategoryRestController(TCPartsCountryBidProductCategoryService tcPartsCountryBidProductCategoryService, TCPartsService tCPartsService, CountryService countryService, RequeteService requeteService, ProductCategoryService productCategoryService) {
+    public TCPartsCountryBidProductCategoryRestController(TCPartsCountryBidProductCategoryService tcPartsCountryBidProductCategoryService, TCPartsService tCPartsService, CountryService countryService, BidService bidService, ProductCategoryService productCategoryService) {
         this.tCPartsCountryBidProductCategoryService = tcPartsCountryBidProductCategoryService;
 
     }

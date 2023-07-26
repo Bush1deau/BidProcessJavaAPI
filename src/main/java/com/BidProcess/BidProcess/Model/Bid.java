@@ -15,8 +15,8 @@ import java.util.Date;
 @Getter
 @Setter
 @Entity
-@Table(name = "REQUETE")
-public class Requete implements Serializable {
+@Table(name = "BID")
+public class Bid implements Serializable {
     /**
      * Identifiant de serialisation
      */

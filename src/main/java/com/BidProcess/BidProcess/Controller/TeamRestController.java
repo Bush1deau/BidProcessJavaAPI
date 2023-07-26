@@ -1,9 +1,7 @@
 package com.BidProcess.BidProcess.Controller;
 
 import com.BidProcess.BidProcess.Model.Team;
-import com.BidProcess.BidProcess.Model.Utilisateur;
 import com.BidProcess.BidProcess.Service.TeamService;
-import com.BidProcess.BidProcess.Service.UtilisateurService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import javax.validation.constraints.NotNull;

@@ -1,13 +1,9 @@
 package com.BidProcess.BidProcess.Service.Impl;
 
 import com.BidProcess.BidProcess.Exception.TeamNotFoundException;
-import com.BidProcess.BidProcess.Exception.UtilisateurNotFoundException;
 import com.BidProcess.BidProcess.Model.Team;
 import com.BidProcess.BidProcess.Repository.TeamRepository;
 import com.BidProcess.BidProcess.Service.TeamService;
-import com.BidProcess.BidProcess.Service.UtilisateurService;
-import com.BidProcess.BidProcess.Model.Utilisateur;
-import com.BidProcess.BidProcess.Repository.UtilisateurRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;

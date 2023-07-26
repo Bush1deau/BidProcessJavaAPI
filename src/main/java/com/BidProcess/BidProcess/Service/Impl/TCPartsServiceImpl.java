@@ -1,16 +1,9 @@
 package com.BidProcess.BidProcess.Service.Impl;
 
-import com.BidProcess.BidProcess.Exception.RequeteNotFoundException;
-import com.BidProcess.BidProcess.Exception.UtilisateurNotFoundException;
-import com.BidProcess.BidProcess.Model.Requete;
+import com.BidProcess.BidProcess.Exception.BidNotFoundException;
 import com.BidProcess.BidProcess.Model.TCParts;
-import com.BidProcess.BidProcess.Repository.RequeteRepository;
 import com.BidProcess.BidProcess.Repository.TCPartsRepository;
-import com.BidProcess.BidProcess.Service.RequeteService;
 import com.BidProcess.BidProcess.Service.TCPartsService;
-import com.BidProcess.BidProcess.Service.UtilisateurService;
-import com.BidProcess.BidProcess.Model.Utilisateur;
-import com.BidProcess.BidProcess.Repository.UtilisateurRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -34,7 +27,7 @@ public class TCPartsServiceImpl implements TCPartsService {
             final TCParts tcParts = optionalTCParts.get();
             return tCPartsRepository.findById(id);
         } else {
-            throw RequeteNotFoundException.requeteNotFound();
+            throw BidNotFoundException.bidNotFound();
         }
     }
 

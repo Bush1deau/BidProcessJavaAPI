@@ -37,19 +37,19 @@ public class TCPartsCountryBidProductCategory implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("idBid")
-    private Requete requete;
+    private Bid bid;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("idProductCategory")
     private ProductCategory productCategory;
 
 
-    public TCPartsCountryBidProductCategory( TCParts tCParts, Country country, Requete requete, ProductCategory productCategory ) {
-        TCPartsCountryBidProductCategoryPK id =new TCPartsCountryBidProductCategoryPK(tCParts.getId(),country.getId(),requete.getId(),productCategory.getId());
+    public TCPartsCountryBidProductCategory( TCParts tCParts, Country country, Bid bid, ProductCategory productCategory ) {
+        TCPartsCountryBidProductCategoryPK id =new TCPartsCountryBidProductCategoryPK(tCParts.getId(),country.getId(),bid.getId(),productCategory.getId());
         this.id=id;
         this.tCParts=tCParts;
         this.country=country;
-        this.requete=requete;
+        this.bid=bid;
         this.productCategory =productCategory;
     }
 
@@ -81,12 +81,12 @@ public class TCPartsCountryBidProductCategory implements Serializable {
     }
 
 
-    public Requete getRequete() {
-        return requete;
+    public Bid getBid() {
+        return bid;
     }
 
-    public void setRequete(Requete requete) {
-        this.requete = requete;
+    public void setBid(Bid bid) {
+        this.bid = bid;
     }
 
 

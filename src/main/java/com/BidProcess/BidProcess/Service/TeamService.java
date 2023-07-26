@@ -1,7 +1,6 @@
 package com.BidProcess.BidProcess.Service;
 
 import com.BidProcess.BidProcess.Model.Team;
-import com.BidProcess.BidProcess.Model.Utilisateur;
 
 import java.util.List;
 import java.util.Optional;
