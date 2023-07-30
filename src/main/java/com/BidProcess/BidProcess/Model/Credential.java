@@ -19,10 +19,17 @@ public class Credential implements Serializable {
      * Identifiant de serialisation
      */
     private static final long serialVersionUID = 181450486423721993L;
-
+    public String email;
+    public String password;
     @Id
-    @GeneratedValue(generator = "SEQ_ROLE_ID", strategy = GenerationType.SEQUENCE)
-
     private Long id;
-    private String Password;
+
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getId() {
+        return id;
+    }
 }

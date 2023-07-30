@@ -1,10 +1,13 @@
 package com.BidProcess.BidProcess.Controller;
 
+import com.BidProcess.BidProcess.Model.Credential;
 import com.BidProcess.BidProcess.Model.User;
 import com.BidProcess.BidProcess.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
 import java.util.List;
@@ -14,9 +17,13 @@ import java.util.Optional;
 @RestController
 public class UserRestController {
 
+public static class CredentialLogin{
+    public String email;
+    public String password;
+}
+
     private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
 
     public UserRestController(UserService userService) {
         this.userService = userService;
@@ -45,7 +52,22 @@ public class UserRestController {
 
     @RequestMapping(value = "/user/delete", method = RequestMethod.DELETE)
     public User user(@RequestBody User user) {
+
         return userService.deleteUser(user);
     }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public User getLogin(@RequestBody()CredentialLogin credentialLogin) {
+        User userVerif = userService.findUtilisateurByEmail(credentialLogin.email);
+        if (userVerif != null) {
+            Boolean isPasswordMatches = passwordEncoder.matches(credentialLogin.password, userVerif.getPassword());
+            System.out.println(isPasswordMatches);
+            if (isPasswordMatches) {
+                return userVerif;
+            }
+        }
+        return null;
+    }
+
 
 }
