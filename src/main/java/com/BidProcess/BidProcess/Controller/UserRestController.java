@@ -22,7 +22,7 @@ public static class CredentialLogin{
     public String password;
 }
 
-    private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
     private final UserService userService;
 
     public UserRestController(UserService userService) {
@@ -57,15 +57,19 @@ public static class CredentialLogin{
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public User getLogin(@RequestBody()CredentialLogin credentialLogin) {
-        User userVerif = userService.findUtilisateurByEmail(credentialLogin.email);
-        if (userVerif != null) {
-            Boolean isPasswordMatches = passwordEncoder.matches(credentialLogin.password, userVerif.getPassword());
+    public User getLogin(@RequestBody CredentialLogin credentialLogin) {
+        System.out.println(credentialLogin.password);
+        User userEmail = userService.findUtilisateurByEmail(credentialLogin.email);
+        if (userEmail != null) {
+            System.out.println("credentialLogin.password");
+            System.out.println(userEmail.getPassword());
+            Boolean isPasswordMatches = passwordEncoder.matches(credentialLogin.password, userEmail.getPassword());
             System.out.println(isPasswordMatches);
             if (isPasswordMatches) {
-                return userVerif;
+                return userEmail;
             }
         }
+        System.out.println("nope");
         return null;
     }
 
