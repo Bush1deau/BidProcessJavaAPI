@@ -1,13 +1,10 @@
 package com.BidProcess.BidProcess.Controller;
 
-import com.BidProcess.BidProcess.Model.Credential;
 import com.BidProcess.BidProcess.Model.User;
 import com.BidProcess.BidProcess.Service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
 import java.util.List;

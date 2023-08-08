@@ -30,13 +30,19 @@ public class Bid implements Serializable {
     private String customerName;
     private String opportunityType;
     private Integer opportunityMargin;
-    private Date contractStart;
+    private String contractStart;
     private Integer ContractDuration;
     private String pricingModel;
     private String scopeQuery;
-    private Date bidAndTendersRead;
+    private String bidAndTendersRead;
     private String additionalContent;
-    private File attachements;
+
+    @ManyToOne
+    private Country country;
+    @ManyToOne
+    private ProductCategory productCategory;
+    @ManyToOne
+    private TCParts tcParts;
 
 
 
