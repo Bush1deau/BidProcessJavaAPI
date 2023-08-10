@@ -9,5 +9,7 @@ public interface BidRepository extends JpaRepository<Bid ,Long> {
 
 
     Optional<Bid> findById(Long id);
+    Bid findBidByUserId(Long user_id);
+
 
 }

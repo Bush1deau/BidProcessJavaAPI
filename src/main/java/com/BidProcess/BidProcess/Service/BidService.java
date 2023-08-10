@@ -16,4 +16,7 @@ public interface BidService {
 
     Bid deleteBid(Bid bid);
 
+    Bid findBidByUserId(Long user_id);
+
+    Bid updateBidStatus(Long bidId, String newStatus);
 }

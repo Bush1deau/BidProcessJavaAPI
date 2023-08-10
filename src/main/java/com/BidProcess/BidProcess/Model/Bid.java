@@ -36,13 +36,15 @@ public class Bid implements Serializable {
     private String scopeQuery;
     private String bidAndTendersRead;
     private String additionalContent;
-
+    private String status;
     @ManyToOne
     private Country country;
     @ManyToOne
     private ProductCategory productCategory;
     @ManyToOne
     private TCParts tcParts;
+    @ManyToOne
+    private User user;
 
 
 

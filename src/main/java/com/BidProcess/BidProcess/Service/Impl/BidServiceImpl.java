@@ -1,6 +1,7 @@
 package com.BidProcess.BidProcess.Service.Impl;
 
 import com.BidProcess.BidProcess.Exception.BidNotFoundException;
+import com.BidProcess.BidProcess.Exception.ResourceNotFoundException;
 import com.BidProcess.BidProcess.Model.Bid;
 import com.BidProcess.BidProcess.Repository.BidRepository;
 import com.BidProcess.BidProcess.Service.BidService;
@@ -41,16 +42,33 @@ public class BidServiceImpl implements BidService {
         bidRepository.save(bid);
         return bid;
     }
+
     @Override
     public Bid updateBid(Bid bid, Long id) {
         bid.setId(id);
-        return  bidRepository.save(bid);
+        return bidRepository.save(bid);
     }
 
     @Transactional
     public Bid deleteBid(Bid bid) {
         bidRepository.delete(bid);
         return bid;
+    }
+
+    @Override
+    public Bid findBidByUserId(Long user_id) {
+        return bidRepository.findBidByUserId(user_id);
+    }
+
+    @Override
+    @Transactional
+    public Bid updateBidStatus(Long bidId, String newStatus) {
+        Bid existingBid = bidRepository.findById(bidId)
+                .orElseThrow(() -> new ResourceNotFoundException("Enchère non trouvée"));
+
+        existingBid.setStatus(newStatus);
+
+        return bidRepository.save(existingBid);
     }
 
 }
