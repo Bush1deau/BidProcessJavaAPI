@@ -58,9 +58,10 @@ public class BidRestController {
     public ResponseEntity<String> updateStatus(@PathVariable Long id, @RequestBody String newStatus){
             bidService.updateBidStatus(id, newStatus);
             return ResponseEntity.ok(newStatus); }
-    @RequestMapping(value = "/bid/delete", method = RequestMethod.DELETE)
-    public Bid deleteBid(@RequestBody Bid bid) {
-        return bidService.deleteBid(bid);
+    @DeleteMapping("bid/delete/{id}")
+    public ResponseEntity<Void> deleteBid(@PathVariable Long id) {
+        bidService.deleteBid(id);
+        return ResponseEntity.noContent().build();
     }
 
     @GetMapping("bid/user_id/{user_id}")

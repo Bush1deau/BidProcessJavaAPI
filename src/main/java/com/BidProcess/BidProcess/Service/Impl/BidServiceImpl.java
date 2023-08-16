@@ -49,14 +49,18 @@ public class BidServiceImpl implements BidService {
         return bidRepository.save(bid);
     }
 
-    @Transactional
-    public Bid deleteBid(Bid bid) {
-        bidRepository.delete(bid);
-        return bid;
+    public Bid deleteBid(Long id) {
+        if (bidRepository.existsById(id)) {
+            bidRepository.deleteById(id);
+        } else {
+            throw new ResourceNotFoundException("Enchère non trouvée avec l'ID : " + id);
+        }
+        return null;
     }
 
     @Override
     public Bid findBidByUserId(Long user_id) {
+
         return bidRepository.findBidByUserId(user_id);
     }
 

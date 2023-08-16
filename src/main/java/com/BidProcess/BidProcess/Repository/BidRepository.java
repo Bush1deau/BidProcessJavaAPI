@@ -12,4 +12,5 @@ public interface BidRepository extends JpaRepository<Bid ,Long> {
     Bid findBidByUserId(Long user_id);
 
 
+
 }

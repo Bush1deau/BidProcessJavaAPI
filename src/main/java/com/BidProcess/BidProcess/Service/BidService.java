@@ -14,7 +14,7 @@ public interface BidService {
 
     Bid updateBid(Bid bid , Long id);
 
-    Bid deleteBid(Bid bid);
+    Bid deleteBid(Long id);
 
     Bid findBidByUserId(Long user_id);
 
