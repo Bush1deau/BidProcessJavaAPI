@@ -67,7 +67,7 @@ public class BidRestController {
     @GetMapping("bid/user_id/{user_id}")
     public List<Bid> findBidByUserId(@PathVariable("user_id") Long id
     ) {
-        return bidService.bids();
+        return bidService.findBidByUserId();
     }
 
     @PatchMapping("bid/{id}")
