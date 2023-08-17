@@ -1,14 +1,11 @@
 package com.BidProcess.BidProcess.Controller;
 
-import com.BidProcess.BidProcess.Exception.ResourceNotFoundException;
 import com.BidProcess.BidProcess.Model.Bid;
 import com.BidProcess.BidProcess.Repository.BidRepository;
 import com.BidProcess.BidProcess.Service.BidService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.validation.constraints.NotNull;
 
 import java.util.List;
 import java.util.Optional;
@@ -60,13 +57,14 @@ public class BidRestController {
             return ResponseEntity.ok(newStatus); }
     @RequestMapping(value = "/bid/delete", method = RequestMethod.DELETE)
     public Bid deleteBid(@RequestBody Bid bid) {
+
         return bidService.deleteBid(bid);
     }
 
     @GetMapping("bid/user_id/{user_id}")
-    public List<Bid> findBidByUserId(@PathVariable("user_id") Long id
+    public List<Bid> findBidByUserId(@PathVariable Long user_id
     ) {
-        return bidService.bids();
+        return bidService.findBidByUserId(user_id);
     }
 
     @PatchMapping("bid/{id}")

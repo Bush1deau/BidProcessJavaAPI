@@ -56,7 +56,7 @@ public class BidServiceImpl implements BidService {
     }
 
     @Override
-    public Bid findBidByUserId(Long user_id) {
+    public List<Bid> findBidByUserId(Long user_id) {
         return bidRepository.findBidByUserId(user_id);
     }
 
